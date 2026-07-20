@@ -27,7 +27,7 @@ async function installOnLinux(version: string): Promise<string> {
   }
   const url = `https://github.com/docker/compose/releases/download/${version}/docker-compose-${await system}-${await hardware}`
   const installerPath = await downloadTool(url)
-  await exec(`chmod +x ${installerPath}`)
+  await exec('chmod', ['+x', installerPath])
   const cachedPath = await cacheFile(
     installerPath,
     'docker-compose',

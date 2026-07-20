@@ -69,7 +69,7 @@ async function installOnLinux(version) {
     }
     const url = `https://github.com/docker/compose/releases/download/${version}/docker-compose-${await system}-${await hardware}`;
     const installerPath = await (0, tool_cache_1.downloadTool)(url);
-    await (0, exec_1.exec)(`chmod +x ${installerPath}`);
+    await (0, exec_1.exec)('chmod', ['+x', installerPath]);
     const cachedPath = await (0, tool_cache_1.cacheFile)(installerPath, 'docker-compose', 'docker-compose', version);
     return cachedPath;
 }
