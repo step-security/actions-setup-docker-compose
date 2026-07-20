@@ -1,0 +1,13 @@
+name: 'Setup docker-compose'
+description: 'Automate download and set up process for docker-compose command'
+author: 'step-security'
+inputs:
+  version:
+    default: 'latest'
+    description: 'the version of docker-compose command'
+branding:
+  color: blue
+  icon: play
+runs:
+  using: 'node24'
+  main: 'dist/index.js'
