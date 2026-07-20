@@ -1,0 +1,49 @@
+{
+  "name": "@step-security/actions-setup-docker-compose",
+  "version": "1.2.4",
+  "description": "the GitHub Action setting up docker-compose command",
+  "main": "lib/main.js",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map",
+    "test": "jest",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/step-security/actions-setup-docker-compose.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "author": "step-security",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^2.0.0",
+    "@actions/exec": "^2.0.0",
+    "@actions/tool-cache": "^3.0.0",
+    "@octokit/core": "^7.0.2",
+    "@octokit/plugin-rest-endpoint-methods": "^17.0.0",
+    "axios": "^1.18.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.10",
+    "@vercel/ncc": "0.38.4",
+    "eslint": "9.39.2",
+    "eslint-plugin-jest": "29.12.2",
+    "jest": "30.2.0",
+    "prettier": "3.8.1",
+    "ts-jest": "29.4.6",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.54.0"
+  }
+}
